@@ -19,7 +19,8 @@ SOURCES += \
     mnotification.cpp \
     mnotificationgroup.cpp \
     mnotificationmanager.cpp \
-    mnotificationmanagerproxy.cpp
+    mnotificationmanagerproxy.cpp \
+    mpreeditinjectionevent.cpp
 
 HEADERS += \
     mdesktopentry_p.h \
@@ -43,7 +44,9 @@ HEADERS += \
     mnotificationmanagerproxy.h \
     MNotification \
     MGConfItem \
-    MNotificationGroup
+    MNotificationGroup \
+    mpreeditinjectionevent.h \
+    mpreeditinjectionevent_p.h
 
 INSTALL_HEADERS += \
     mgconfitem.h \
@@ -57,7 +60,8 @@ INSTALL_HEADERS += \
     mnotificationgroup.h \
     MNotification \
     MGConfItem \
-    MNotificationGroup
+    MNotificationGroup \
+    mpreeditinjectionevent.h
 
 pcfiles.files += mlite.pc
 pcfiles.path += $$INSTALL_ROOT/usr/lib/pkgconfig

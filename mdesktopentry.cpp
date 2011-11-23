@@ -1,6 +1,6 @@
 /***************************************************************************
 ** This file was derived from the MDesktopEntry implementation in the
-** libmeegotouch library.
+** 
 **
 ** Original Copyright:
 ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
@@ -310,7 +310,7 @@ QString MDesktopEntry::name() const
     QString name = value(NameKey);
     QString lang, script, country, postfixKey;
 
-    MGConfItem item("/meego/ux/locale");
+    MGConfItem item("/system/ux/locale");
     if (item.value() == QVariant::Invalid)
         parsePosixLang(getenv("LANG"), &lang, &country, &script);
     else

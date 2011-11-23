@@ -13,51 +13,26 @@ MOC_DIR = .moc
 SOURCES += \
     mgconfitem.cpp \
     mdesktopentry.cpp \
-    mremoteaction.cpp \
-    maction.cpp \
-    mfiledatastore.cpp \
-    mnotification.cpp \
-    mnotificationgroup.cpp \
-    mnotificationmanager.cpp \
-    mnotificationmanagerproxy.cpp
+	mfiledatastore.cpp
+
 
 HEADERS += \
     mdesktopentry_p.h \
     mdesktopentry.h \
     mgconfitem.h \
-    mlite-global.h \
-    mremoteaction.h \
-    mremoteaction_p.h \
-    maction.h \
-    maction_p.h \
-    MAction \
+	mlite-global.h \
     mfiledatastore.h \
     mfiledatastore_p.h \
     mdataaccess.h \
-    mdatastore.h \
-    mnotification.h \
-    mnotification_p.h \
-    mnotificationgroup.h \
-    mnotificationgroup_p.h \
-    mnotificationmanager.h \
-    mnotificationmanagerproxy.h \
-    MNotification \
-    MGConfItem \
-    MNotificationGroup
+	mdatastore.h \
+	MGConfItem
 
 INSTALL_HEADERS += \
     mgconfitem.h \
     mdesktopentry.h \
-    mremoteaction.h \
-    maction.h \
     mlite-global.h \
-    MAction \
     mfiledatastore.h \
-    mnotification.h \
-    mnotificationgroup.h \
-    MNotification \
-    MGConfItem \
-    MNotificationGroup
+	MGConfItem
 
 pcfiles.files += mlite.pc
 pcfiles.path += $$INSTALL_ROOT/usr/lib/pkgconfig

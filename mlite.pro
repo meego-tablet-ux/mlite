@@ -1,8 +1,12 @@
 QT     = gui core dbus
-TARGET = $$qtLibraryTarget(mlite)
+if (wayland) {
+    TARGET = $$qtLibraryTarget(mlite-wayland)
+} else {
+    TARGET = $$qtLibraryTarget(mlite-xlib)
+}
 TEMPLATE = lib
 
-CONFIG += link_pkgconfig
+CONFIG += create_pc create_prl no_install_prl link_pkgconfig
 PKGCONFIG += gconf-2.0
 
 DEFINES += MLITE_LIBRARY
@@ -34,18 +38,21 @@ INSTALL_HEADERS += \
     mfiledatastore.h \
 	MGConfItem
 
-pcfiles.files += mlite.pc
-pcfiles.path += $$INSTALL_ROOT/usr/lib/pkgconfig
+QMAKE_PKGCONFIG_NAME = $$target.name
+QMAKE_PKGCONFIG_DESCRIPTION = mlite classes
+QMAKE_PKGCONFIG_LIBDIR = $$target.path
+QMAKE_PKGCONFIG_INCDIR = $$target.path
+QMAKE_PKGCONFIG_DESTDIR = pkgconfig
 
 headers.files += $$INSTALL_HEADERS
 headers.path += $$INSTALL_ROOT/usr/include/mlite
 
 target.path += $$[QT_INSTALL_LIBS]
 
-INSTALLS += target headers pcfiles
+INSTALLS += target headers
 
 TRANSLATIONS += $${SOURCES} $${HEADERS} $${OTHER_FILES}
-VERSION = 0.0.6
+VERSION = 0.1.2
 PROJECT_NAME = mlite
 
 dist.commands += rm -fR $${PROJECT_NAME}-$${VERSION} &&

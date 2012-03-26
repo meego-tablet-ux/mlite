@@ -38,14 +38,22 @@ INSTALL_HEADERS += \
     mfiledatastore.h \
 	MGConfItem
 
+headers.files += $$INSTALL_HEADERS
+if (wayland) {
+    headers.path = $$INSTALL_ROOT/usr/include/mlite-wayland
+} else {
+    headers.path = $$INSTALL_ROOT/usr/include/mlite-xlib
+}
+
 QMAKE_PKGCONFIG_NAME = $$target.name
 QMAKE_PKGCONFIG_DESCRIPTION = mlite classes
 QMAKE_PKGCONFIG_LIBDIR = $$target.path
-QMAKE_PKGCONFIG_INCDIR = $$target.path
+if (wayland) {
+    QMAKE_PKGCONFIG_INCDIR = $$headers.path
+} else {
+    QMAKE_PKGCONFIG_INCDIR = $$headers.path
+}
 QMAKE_PKGCONFIG_DESTDIR = pkgconfig
-
-headers.files += $$INSTALL_HEADERS
-headers.path += $$INSTALL_ROOT/usr/include/mlite
 
 target.path += $$[QT_INSTALL_LIBS]
 

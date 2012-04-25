@@ -20,19 +20,20 @@ HEADERS += \
     mdesktopentry_p.h \
     mdesktopentry.h \
     mgconfitem.h \
-	mlite-global.h \
+    mlite-global.h \
     mfiledatastore.h \
     mfiledatastore_p.h \
     mdataaccess.h \
-	mdatastore.h \
-	MGConfItem
+    mdatastore.h \
+    MGConfItem \
+    MDesktopEntry
 
 INSTALL_HEADERS += \
     mgconfitem.h \
     mdesktopentry.h \
     mlite-global.h \
     mfiledatastore.h \
-	MGConfItem
+    MGConfItem
 
 pcfiles.files += mlite.pc
 pcfiles.path += $$INSTALL_ROOT/usr/lib/pkgconfig
